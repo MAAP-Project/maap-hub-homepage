@@ -6,10 +6,12 @@ See README.md for information on how to test this out.
 import pathlib
 from oauthenticator.generic import GenericOAuthenticator
 from jupyterhub.spawner import SimpleLocalProcessSpawner
+import os
 import subprocess
 
 crypt_key_output = subprocess.run(['bash', '-c', 'openssl rand -hex 32'], capture_output=True, text=True)
 os.environ['JUPYTERHUB_CRYPT_KEY'] = crypt_key_output.stdout.strip()
+
 
 HERE = pathlib.Path(__file__).parent
 
@@ -22,7 +24,6 @@ c.JupyterHub.template_paths = [str(HERE / 'templates')]
 # We use this so we can get a 'login' button, instead of a username / password
 # field.
 c.JupyterHub.authenticator_class = GenericOAuthenticator
-
 c.Authenticator.enable_auth_state = True
 
 def userdata_hook(spawner, auth_state):
@@ -32,29 +33,30 @@ def userdata_hook(spawner, auth_state):
 
 c.Spawner.auth_state_hook = userdata_hook
 
+
 # Variables that are passed through to templates!
 c.JupyterHub.template_vars = {
     'custom': {
         "redirect_to": None,
-        "interface_selector": True,
-        "default_url": "/rstudio",
+        "interface_selector": False,
+        "default_url": "/",
         'org': {
-            'name': 'University of Foo',
-            'logo_url': 'https://jupyter.org/assets/nav_logo.svg',
-            'url': 'https://jupyter.org',
+            'name': 'The Multi-Mission Algorithm and Analysis Platform (MAAP)Project',
+            'logo_url': 'https://maap-project.org/wp-content/uploads/2021/10/nasamaaplogo3.png',
+            'url': 'https://maap-project.org/',
         },
         'operated_by': {
-            'name': 'Operating Org',
+            'name': '2i2c',
             'url': 'https://2i2c.org',
             'custom_html': '',
         },
         'funded_by': {
-            'name': '',
-            'url': '',
-            'custom_html': 'Funding <i>Org</i>',
+            'name': 'NASA',
+            'url': 'https://www.earthdata.nasa.gov/esds',
+            'custom_html': '',
         },
         'designed_by': {
-            'name': 'Funding Org',
+            'name': '2i2c',
             'url': 'https://2i2c.org',
             'custom_html': '',
         }
