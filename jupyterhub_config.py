@@ -7,10 +7,6 @@ import pathlib
 from oauthenticator.generic import GenericOAuthenticator
 from jupyterhub.spawner import SimpleLocalProcessSpawner
 import os
-import subprocess
-
-crypt_key_output = subprocess.run(['bash', '-c', 'openssl rand -hex 32'], capture_output=True, text=True)
-os.environ['JUPYTERHUB_CRYPT_KEY'] = crypt_key_output.stdout.strip()
 
 
 HERE = pathlib.Path(__file__).parent
@@ -24,14 +20,6 @@ c.JupyterHub.template_paths = [str(HERE / 'templates')]
 # We use this so we can get a 'login' button, instead of a username / password
 # field.
 c.JupyterHub.authenticator_class = GenericOAuthenticator
-c.Authenticator.enable_auth_state = True
-
-def userdata_hook(spawner, auth_state):
-    if auth_state and 'id_token' in auth_state:
-        keycloak_token = auth_state['id_token']
-        spawner.environment['MAAP_PGT'] = f"jwt:{keycloak_token}"
-
-c.Spawner.auth_state_hook = userdata_hook
 
 
 # Variables that are passed through to templates!
