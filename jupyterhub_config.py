@@ -6,6 +6,7 @@ See README.md for information on how to test this out.
 import pathlib
 from oauthenticator.generic import GenericOAuthenticator
 from jupyterhub.spawner import SimpleLocalProcessSpawner
+import os
 
 
 HERE = pathlib.Path(__file__).parent
@@ -20,29 +21,30 @@ c.JupyterHub.template_paths = [str(HERE / 'templates')]
 # field.
 c.JupyterHub.authenticator_class = GenericOAuthenticator
 
+
 # Variables that are passed through to templates!
 c.JupyterHub.template_vars = {
     'custom': {
         "redirect_to": None,
-        "interface_selector": True,
-        "default_url": "/rstudio",
+        "interface_selector": False,
+        "default_url": "/",
         'org': {
-            'name': 'University of Foo',
-            'logo_url': 'https://jupyter.org/assets/nav_logo.svg',
-            'url': 'https://jupyter.org',
+            'name': 'The Multi-Mission Algorithm and Analysis Platform (MAAP)Project',
+            'logo_url': 'https://maap-project.org/wp-content/uploads/2021/10/nasamaaplogo3.png',
+            'url': 'https://maap-project.org/',
         },
         'operated_by': {
-            'name': 'Operating Org',
+            'name': '2i2c',
             'url': 'https://2i2c.org',
             'custom_html': '',
         },
         'funded_by': {
-            'name': '',
-            'url': '',
-            'custom_html': 'Funding <i>Org</i>',
+            'name': 'NASA',
+            'url': 'https://www.earthdata.nasa.gov/esds',
+            'custom_html': '',
         },
         'designed_by': {
-            'name': 'Funding Org',
+            'name': '2i2c',
             'url': 'https://2i2c.org',
             'custom_html': '',
         }
