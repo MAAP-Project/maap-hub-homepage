@@ -3,10 +3,11 @@
 {% block error_detail %}
 {% if status_code == 403 %}
 <style>
+    h1 {
+        display: none
+    }
 	.info {
   		color: #fc8703;
-  		background-color: #f2f2f3;
-		
 		max-width: 640px;
 		padding: 30px;
 		margin: 0 auto;
@@ -17,7 +18,7 @@
 </style>
 <div class="error">
 	<div class="info">
-		<i class="fa fa-info-circle"></i>
+		
 <p>Thank you for registering with the MAAP!</p>
 
 <p>Your account is pending activation by a MAAP Administrator. If you have a question about your account's activation, email:<br> <b>support@maap-project.org</b>.</p>
