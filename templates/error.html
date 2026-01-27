@@ -7,7 +7,6 @@
         display: none
     }
 	.info {
-  		color: #fc8703;
 		max-width: 640px;
 		padding: 30px;
 		margin: 0 auto;
@@ -18,18 +17,28 @@
 </style>
 <div class="error">
 	<div class="info">
-		
-<p>Thank you for registering with the MAAP!</p>
+		<img src="https://maap-project.org/wp-content/uploads/2025/04/cropped-nasamaaplogo3.png" alt="MAAP Logo" style="max-width: 300px;margin-bottom: 20px;">
 
-<p>Your account is pending activation by a MAAP Administrator. If you have a question about your account's activation, email:<br> <b>support@maap-project.org</b>.</p>
+		<h2 style="
+    margin-top: 20px;
+">Thank you for registering!</h2>
 
-<p>To learn how to get started with MAAP after your account is activated, please visit our User Guides (<a href="https://docs.maap-project.org/">docs.maap-project.org</a>).</p>
+		<h3 style="
+    margin-top: 20px;
+">Please stand-by while we review your request.</h3>
+
+		<p><br>An Administrator will review your account for activation.</p>
+
+		<p><strong>How long does it take?</strong><br>
+		Reviews are usually completed within 1–2 business days. You'll receive an email the moment your access is ready.</p>
+
+		<p><strong>While you wait</strong><br>
+		Feel free to explore our <a href="https://docs.maap-project.org/">User Guides</a> to get a head start on the platform's features.</p>
+
+		<p><strong>Questions?</strong><br>
+		Reach out to us at <a href="mailto:support@maap-project.org">support@maap-project.org</a>.</p>
 	</div>
-	<div class="text-center">
-		<a role="button" class="btn btn-jupyter" href="/hub//logout">
-		Try a different account
-		</a>
-	</div>
+	
 </div>
 {% else %}
 {{ super() }}
