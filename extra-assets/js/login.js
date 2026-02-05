@@ -9,10 +9,10 @@ function redirectIfNeeded() {
 function setInterface(interfaceUrl) {
     let loginUrl = new URL($('#home').data('authenticator-login-url'), document.location.origin);
     loginUrl.searchParams.set('next', '/hub/user-redirect/' + interfaceUrl)
-    $('#login-button').attr(
-        'href',
-        loginUrl.toString()
-    );
+    // Update both NASA and ESA buttons (ESA button stays disabled but gets updated URL for future)
+    $('#login-button-nasa').attr('href', loginUrl.toString());
+    // Keep legacy login-button for backwards compatibility
+    $('#login-button').attr('href', loginUrl.toString());
 }
 $(function() {
     redirectIfNeeded();

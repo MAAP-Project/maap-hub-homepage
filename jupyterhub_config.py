@@ -29,7 +29,7 @@ c.JupyterHub.template_vars = {
         "interface_selector": False,
         "default_url": "/",
         'org': {
-            'name': 'The Multi-Mission Algorithm and Analysis Platform (MAAP)Project',
+            'name': 'The Multi-Mission Algorithm and Analysis Platform (MAAP) Project',
             'logo_url': 'https://maap-project.org/wp-content/uploads/2021/10/nasamaaplogo3.png',
             'url': 'https://maap-project.org/',
         },
