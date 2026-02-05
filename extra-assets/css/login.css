@@ -1,3 +1,7 @@
+body {
+    background-color: white !important;
+}
+
 #home {
     margin-top: 32px
 }
@@ -6,21 +10,62 @@
     margin-top: 32px;
 }
 
+.login-buttons-container {
+    margin-top: 32px;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn-nasa, .btn-esa {
+    min-width: 250px;
+    padding: 12px 24px;
+}
+
+.btn-nasa {
+    background-color: #0b3d91;
+    color: white;
+    border: none;
+}
+
+.btn-nasa:hover {
+    background-color: #0a2f6e;
+    color: white;
+}
+
+.btn-esa {
+    background-color: #003d7a;
+    color: white;
+    border: none;
+}
+
+.btn-esa.disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.login-help-text {
+    margin-top: 16px;
+    color: #333;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
 #login-button {
     margin-top: 32px;
 }
+
 #operated-by {
     margin-top: 8px;
-    color: darkgrey;
+    color: #666;
 }
 
 #operated-by a {
-    color:grey;
-    font-weight: bold;
-}
-
-[data-bs-theme="dark"] #operated-by a {
-    color: lightgray;
+    color: #666;
     font-weight: bold;
 }
 
@@ -32,17 +77,13 @@
     color: black;
 }
 
-[data-bs-theme="dark"] .details-welcome {
-    color: white;
-  }
-
 .details-logos img {
     margin: 12px;
     text-align: right;
 }
 
 .details p {
-    color: grey;
+    color: #555;
 }
 
 .announcements {
@@ -68,16 +109,21 @@
     margin-top: 32px;
     padding-bottom: 32px;
     border-bottom: 2px lightgrey dotted;
+    color: #333;
+}
+
+.questions h4 {
+    color: #333;
 }
 
 .footer {
     padding-top: 64px;
     text-align: center;
-    color: darkgrey;
+    color: #666;
 }
 
 .footer a {
-    color: darkgrey;
+    color: #666;
     text-decoration: underline;
 }
 
