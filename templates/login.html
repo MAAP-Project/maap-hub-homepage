@@ -56,7 +56,7 @@
       <img src="{{ custom.org.logo_url }}" alt="{{ custom.org.name }} logo" class='hub-logo'
         title='hub logo' />
     </a>
-  <div id="operated-by">
+  <!-- <div id="operated-by">
       {%- if custom.operated_by.custom_html %}
       Operated by: {{ custom.operated_by.custom_html | safe }} |
       {%- else %}
@@ -74,7 +74,7 @@
       {%- else %}
       Designed by: <a href="{{ custom.designed_by.url }}" class="text-decoration-none">{{ custom.designed_by.name }}</a>
       {%- endif %}
-  </div>
+  </div> -->
   </div>
   <div class="login-container text-center">
     {% if "interface_selector" in custom and custom["interface_selector"] and (not next or next == "%2Fhub%2F") %}
@@ -114,7 +114,7 @@
   <div class="row col-md-8 mx-auto details">
     <div class="col-md-12 text-center">
       <big class="details-welcome lead">
-      Welcome to the <a href="{{ custom.org.url }}" class="text-decoration-none">{{ custom.org.name }}</a> JupyterHub.
+      Welcome to the <a href="{{ custom.org.url }}" class="text-decoration-none">The Multi-Mission Algorithm and Analysis Platform (MAAP) Project</a> JupyterHub.
       </big>
       <br />
       <br />
@@ -147,20 +147,15 @@
     </div>
 
   <div class="footer">
-    <p>
+    <!-- <p>
       This service is run transparently from
       <a href="https://github.com/2i2c-org/infrastructure">
         github.com/2i2c-org/infrastructure
       </a>
-    </p>
+    </p> -->
     <p>
-      Built with
-      <a href="https://k8s.org">Kubernetes</a>,
-      <a href="https://helm.sh">Helm</a>,
-      <a href="https://docker.com">Docker</a>,
-      <a href="https://github.com/conda-forge/miniforge">Miniforge</a> and
-      many parts of the <a href="https://jupyter.org">Jupyter Project</a>
-      </p>
+      This service is funded by <a href="https://www.nasa.gov" class="text-decoration-none">NASA</a> and hosted by <a href="https://2i2c.org" class="text-decoration-none">2i2c</a>.
+    </p>
   </div>
 </div>
 {% endif %}
