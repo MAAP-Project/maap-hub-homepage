@@ -1,40 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Ropa+Sans:ital@0;1&display=swap');
+
+body {
+    background-color: white !important;
+    font-family: 'Ropa Sans', sans-serif;
+}
+
+a {
+    color: #00549f;
+}
+
+a:hover {
+    color: #16b7cc;
+}
+
 #home {
-    margin-top: 32px
+    margin-top: 16px;
 }
 
 .login-container {
-    margin-top: 32px;
+    margin-top: 16px;
+}
+
+.login-buttons-container {
+    margin-top: 16px;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn-nasa, .btn-esa {
+    min-width: 250px;
+    padding: 12px 24px;
+    font-family: 'Ropa Sans', sans-serif;
+}
+
+.btn-nasa {
+    background-color: #00549f;
+    color: white;
+    border: none;
+}
+
+.btn-nasa:hover {
+    background-color: #00338d;
+    color: white;
+}
+
+.btn-esa {
+    background-color: #003d7a;
+    color: white;
+    border: none;
+}
+
+.btn-esa.disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.login-help-text {
+    margin-top: 10px;
+    color: #333;
+    font-size: 1.1em;
+    font-weight: 500;
 }
 
 #login-button {
-    margin-top: 32px;
+    margin-top: 16px;
 }
+
 #operated-by {
     margin-top: 8px;
-    color: darkgrey;
+    color: #666;
 }
 
 #operated-by a {
-    color:grey;
-    font-weight: bold;
-}
-
-[data-bs-theme="dark"] #operated-by a {
-    color: lightgray;
+    color: #00549f;
     font-weight: bold;
 }
 
 .details {
-    margin-top: 32px;
+    margin-top: 16px;
 }
 
 .details-welcome {
     color: black;
 }
 
-[data-bs-theme="dark"] .details-welcome {
-    color: white;
-  }
+.details-welcome a {
+    color: #00549f;
+}
 
 .details-logos img {
     margin: 12px;
@@ -42,7 +99,11 @@
 }
 
 .details p {
-    color: grey;
+    color: #555;
+}
+
+.details p a {
+    color: #00549f;
 }
 
 .announcements {
@@ -50,7 +111,7 @@
 }
 
 .announcements > div {
-    margin-top: 16px;
+    margin-top: 8px;
     padding-top: 4px;
     padding-bottom: 5px;
     border: 2px dotted orange;
@@ -61,23 +122,33 @@
 }
 
 .questions {
-    margin-top: 12px;
+    margin-top: 8px;
 }
 
 .questions > div {
-    margin-top: 32px;
-    padding-bottom: 32px;
+    margin-top: 12px;
+    padding-bottom: 12px;
     border-bottom: 2px lightgrey dotted;
+    color: #333;
+}
+
+.questions h4 {
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.questions a {
+    color: #00549f;
 }
 
 .footer {
-    padding-top: 64px;
+    padding-top: 16px;
     text-align: center;
-    color: darkgrey;
+    color: #666;
 }
 
 .footer a {
-    color: darkgrey;
+    color: #00549f;
     text-decoration: underline;
 }
 
@@ -86,5 +157,5 @@ p.hub-login-text {
 }
 
 div.login-header img.hub-logo {
-    width: 40%;
+    width: 30%;
 }
