@@ -50,34 +50,32 @@
 <div class="container login-header" id="home" data-authenticator-login-url="{{authenticator_login_url}}">
   <div class="text-center">
     <a href="{{ custom.org.url }}">
-      <img src="{{ custom.org.logo_url }}" alt="{{ custom.org.name }} logo" class='hub-logo'
-        title='hub logo' />
+      <img src="{{ custom.org.logo_url }}" alt="{{ custom.org.name }} logo" class="hub-logo"
+        title="hub logo" />
     </a>
   </div>
-  <div class="login-container text-center">
-    <div class="login-buttons-container">
-      <a role="button" id="login-button-nasa" class='btn btn-nasa btn-lg' href='{{authenticator_login_url}}'>
-        Log in with NASA EarthData
-      </a>
-      <a role="button" id="login-button-esa" class='btn btn-esa btn-lg disabled' href='#' aria-disabled="true" title="ESA login coming soon">
-        Log in with ESA (soon)
-      </a>
-    </div>
-    <p class="login-help-text">👉 New users: click your login provider above to request access</p>
-  </div>
 
-  <div class="row col-md-8 mx-auto details">
-    <div class="col-md-12 text-center" style="margin-top: 12px">
-      <big class="details-welcome lead">
-      Welcome to the <a href="{{ custom.org.url }}">{{ custom.org.name }}</a> JupyterHub.
-      </big>
-      <br />
-      <p>A collaborative platform for analyzing Earth observation data. See <a href="https://docs.maap-project.org/en/hub/">documentation</a> for more information.</p>
+  <div class="hero-card">
+    <p class="details-welcome lead" style="margin: 0 0 6px 0;">
+      Welcome to the
+      <a href="{{ custom.org.url }}">{{ custom.org.name }}</a>
+      JupyterHub.
+    </p>
+    <p style="color: #555; margin-bottom: 18px;">
+      A collaborative platform for analyzing Earth observation data.
+    </p>
+    <div class="login-buttons-container" style="margin-top: 8px;">
+      <a role="button" id="login-button-nasa" class="btn btn-nasa btn-lg" href="{{authenticator_login_url}}">
+        Sign in with NASA EarthData
+      </a>
+      <a role="button" id="login-button-esa" class="btn btn-esa btn-lg disabled" href="#" aria-disabled="true" title="ESA login coming soon">
+        Sign in with ESA (soon)
+      </a>
     </div>
   </div>
 
   {% if custom.announcements is defined %}
-    <div class="col-md-8 mx-auto announcements" >
+    <div class="col-md-8 mx-auto announcements">
       {% for announcement in custom.announcements %}
       <div class="announcements-text">
         {{ announcement | safe }}
@@ -86,19 +84,64 @@
     </div>
   {% endif %}
 
-  <div class="col-md-8 mx-auto questions">
+  <div class="journey" id="journey">
+    <div class="journey-header">
+      <div class="eyebrow">New to MAAP?</div>
+      <h2>Register for a MAAP account</h2>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>NASA EarthData account</h4>
+        <p>Sign in with your existing EarthData (EDL) account, or create one in a few minutes.</p>
+        <a class="step-link" href="https://www.earthdata.nasa.gov/">What is EarthData? →</a>
+        <p class="step-meta">Takes ~5 min if you don't have one yet.</p>
+        <a role="button" class="btn btn-nasa step-cta" href="{{authenticator_login_url}}">
+          Start with NASA EarthData
+        </a>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Accept the MAAP EULA</h4>
+        <p>Review and accept the MAAP End User License Agreement to use the platform.</p>
+        <p class="step-meta">One-time, takes ~1 min.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>MAAP account review</h4>
+        <p>Your registration will be automatically submitted for review. We'll email you when your account is approved. Reach out to the MAAP team at <a href="mailto:support@maap-project.org">support@maap-project.org</a> with any questions.</p>
+        <p class="step-meta">Approval: <strong>1–3 business days</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="questions-grid" style="margin-bottom: 40px;">
     <div>
       <h4>Who can use this service?</h4>
-      This JupyterHub service is open to approved users. Log in with your NASA EarthData or ESA credentials to request access.
+      <p>MAAP JupyterHub is open to approved users from the Earth-observation research community.
+         Anyone with a NASA EarthData account can request access.</p>
     </div>
     <div>
       <h4>Where can I learn more?</h4>
       {% if custom.learn_more is defined %}
         {{ custom.learn_more | safe }}
       {% else %}
-        Visit the <a href="https://docs.maap-project.org/en/hub/" class="text-decoration-none">documentation</a> for information about using the hub and deployment technology.
+        <p>Visit the <a href="https://docs.maap-project.org/en/hub/">MAAP hub documentation</a>
+           for tutorials, deployment details, and getting-started guides.</p>
       {% endif %}
     </div>
+    <div>
+      <h4>What happens after I request access?</h4>
+      <p>You'll get a confirmation email after EarthData sign-in and EULA acceptance.
+         A second email follows once your MAAP account is approved (typically 1–3 business days).</p>
+    </div>
+    <div>
+      <h4>I have other questions</h4>
+      <p>Browse <a href="https://docs.maap-project.org/en/hub/">the docs</a> or reach out to
+         the MAAP team via the <a href="{{ custom.org.url }}">project site</a>.</p>
+    </div>
+  </div>
 </div>
 {% endif %}
 {% endblock %}
